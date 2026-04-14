@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BHP Collective — CEU Training Division Strategic Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bhpc-ink: #1a1410;
+    --bhpc-cream: #faf7f2;
+    --bhpc-warm: #f5efe6;
+    --bhpc-amber: #c97b2e;
+    --bhpc-amber-light: #f5ddb5;
+    --bhpc-coral: #c4503a;
+    --bhpc-coral-light: #f5d5ce;
+    --bhpc-teal: #1a6b5a;
+    --bhpc-teal-light: #c8e8e0;
+    --bhpc-purple: #4a3d7c;
+    --bhpc-purple-light: #dddaf5;
+    --bhpc-pink: #9e3468;
+    --bhpc-pink-light: #f5d0e4;
+    --bhpc-muted: #6b5f52;
+    --bhpc-border: rgba(26,20,16,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bhpc-cream);
+    color: var(--bhpc-ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    background: var(--bhpc-ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6rem 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,123,46,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: 30%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,80,58,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bhpc-amber);
+    margin-bottom: 1.5rem;
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 7vw, 86px);
+    font-weight: 300;
+    color: #faf7f2;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    max-width: 780px;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: var(--bhpc-amber);
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(250,247,242,0.6);
+    max-width: 540px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+  .cover-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-left: 2px solid var(--bhpc-amber);
+    padding-left: 1.5rem;
+  }
+  .cover-meta span {
+    font-size: 13px;
+    color: rgba(250,247,242,0.55);
+    font-weight: 300;
+  }
+  .cover-meta strong {
+    color: rgba(250,247,242,0.9);
+    font-weight: 500;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 8vw;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(250,247,242,0.3);
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--bhpc-warm);
+    border-bottom: 1px solid var(--bhpc-border);
+    padding: 2.5rem 8vw;
+  }
+  .toc-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bhpc-muted);
+    margin-bottom: 1rem;
+  }
+  .toc-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .toc-links a {
+    font-size: 13px;
+    color: var(--bhpc-ink);
+    text-decoration: none;
+    padding: 5px 14px;
+    border: 0.5px solid var(--bhpc-border);
+    border-radius: 20px;
+    transition: all 0.2s;
+    font-weight: 400;
+  }
+  .toc-links a:hover {
+    background: var(--bhpc-ink);
+    color: var(--bhpc-cream);
+    border-color: var(--bhpc-ink);
+  }
+
+  /* SECTION STRUCTURE */
+  .section {
+    padding: 5rem 8vw;
+    border-bottom: 1px solid var(--bhpc-border);
+  }
+  .section:nth-child(even) {
+    background: var(--bhpc-warm);
+  }
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bhpc-amber);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+  .section-lead {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--bhpc-muted);
+    max-width: 660px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  /* IDENTITY PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--bhpc-border);
+    border: 1px solid var(--bhpc-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .pillar {
+    background: var(--bhpc-cream);
+    padding: 2rem 1.5rem;
+  }
+  .pillar-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .pillar-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .pillar-body {
+    font-size: 13px;
+    color: var(--bhpc-muted);
+    line-height: 1.6;
+  }
+
+  /* WORKSHOPS */
+  .workshop-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--bhpc-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .workshop-item {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid var(--bhpc-border);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .workshop-item:last-child { border-bottom: none; }
+  .workshop-item:nth-child(odd) { background: var(--bhpc-cream); }
+  .workshop-item:nth-child(even) { background: var(--bhpc-warm); }
+  .w-tag {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 70px;
+  }
+  .w-tag-color {
+    width: 4px;
+    height: 48px;
+    border-radius: 2px;
+    margin: 0 auto;
+  }
+  .w-ce {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--bhpc-muted);
+  }
+  .w-body {}
+  .w-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .w-hook {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--bhpc-muted);
+    margin-bottom: 0.75rem;
+  }
+  .w-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 0.75rem;
+  }
+  .w-pill {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 0.5px solid var(--bhpc-border);
+    color: var(--bhpc-muted);
+    font-weight: 400;
+  }
+  .w-modules {
+    font-size: 13px;
+    color: var(--bhpc-muted);
+    line-height: 1.7;
+    padding-left: 1rem;
+    border-left: 2px solid var(--bhpc-border);
+  }
+  .w-modules li { margin-bottom: 2px; }
+
+  /* AUDIENCE CARDS */
+  .audience-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 2rem;
+  }
+  .audience-card {
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ac-black-women { background: var(--bhpc-amber-light); }
+  .ac-queer { background: var(--bhpc-pink-light); }
+  .ac-bipoc { background: var(--bhpc-teal-light); }
+  .ac-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .ac-black-women .ac-badge { color: var(--bhpc-amber); }
+  .ac-queer .ac-badge { color: var(--bhpc-pink); }
+  .ac-bipoc .ac-badge { color: var(--bhpc-teal); }
+  .ac-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .ac-body { font-size: 13px; color: var(--bhpc-muted); line-height: 1.7; }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--bhpc-amber), var(--bhpc-coral), var(--bhpc-teal), var(--bhpc-purple));
+  }
+  .tl-phase {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  .tl-phase::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bhpc-cream);
+    border: 2px solid var(--bhpc-amber);
+    z-index: 1;
+  }
+  .tl-phase:nth-child(2)::before { border-color: var(--bhpc-amber); }
+  .tl-phase:nth-child(3)::before { border-color: var(--bhpc-coral); }
+  .tl-phase:nth-child(4)::before { border-color: var(--bhpc-teal); }
+  .tl-phase:nth-child(5)::before { border-color: var(--bhpc-purple); }
+  .tl-phase:nth-child(6)::before { border-color: var(--bhpc-pink); }
+  .tl-phase:nth-child(7)::before { border-color: var(--bhpc-teal); }
+  .tl-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .tl-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .tl-theme {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--bhpc-muted);
+    margin-bottom: 1rem;
+  }
+  .action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .action-card {
+    background: var(--bhpc-cream);
+    border: 1px solid var(--bhpc-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .section:nth-child(even) .action-card {
+    background: #fdf9f4;
+  }
+  .action-category {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .action-items {
+    font-size: 13px;
+    color: var(--bhpc-muted);
+    line-height: 1.7;
+    padding-left: 1rem;
+  }
+  .action-items li { margin-bottom: 3px; }
+
+  /* STANDOUT SECTION */
+  .standout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .standout-card {
+    background: var(--bhpc-ink);
+    color: var(--bhpc-cream);
+    border-radius: 8px;
+    padding: 2rem 1.75rem;
+  }
+  .standout-card.light {
+    background: var(--bhpc-cream);
+    color: var(--bhpc-ink);
+    border: 1px solid var(--bhpc-border);
+  }
+  .sc-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bhpc-amber);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .standout-card.light .sc-label { color: var(--bhpc-teal); }
+  .sc-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    color: var(--bhpc-cream);
+  }
+  .standout-card.light .sc-title { color: var(--bhpc-ink); }
+  .sc-body { font-size: 13px; line-height: 1.7; color: rgba(250,247,242,0.65); }
+  .standout-card.light .sc-body { color: var(--bhpc-muted); }
+
+  /* ETHICS DEEP DIVE */
+  .ethics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--bhpc-border);
+    border: 1px solid var(--bhpc-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .ethics-cell {
+    background: var(--bhpc-cream);
+    padding: 1.75rem;
+  }
+  .ec-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bhpc-coral);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .ec-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .ec-body { font-size: 13px; color: var(--bhpc-muted); line-height: 1.6; }
+
+  /* FULL WORKSHOP OUTLINES */
+  .outline-block {
+    background: var(--bhpc-cream);
+    border: 1px solid var(--bhpc-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .outline-header {
+    padding: 1.75rem 2rem;
+    border-bottom: 1px solid var(--bhpc-border);
+  }
+  .outline-header.coral { border-left: 4px solid var(--bhpc-coral); }
+  .outline-header.purple { border-left: 4px solid var(--bhpc-purple); }
+  .outline-header.teal { border-left: 4px solid var(--bhpc-teal); }
+  .outline-header.amber { border-left: 4px solid var(--bhpc-amber); }
+  .outline-header.pink { border-left: 4px solid var(--bhpc-pink); }
+  .oh-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .oh-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .oh-meta { font-size: 13px; color: var(--bhpc-muted); }
+  .outline-body {
+    padding: 1.5rem 2rem;
+  }
+  .outline-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .om-block {}
+  .om-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bhpc-muted);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .om-items {
+    font-size: 13px;
+    color: var(--bhpc-ink);
+    line-height: 1.7;
+    list-style: none;
+    padding: 0;
+  }
+  .om-items li::before {
+    content: '— ';
+    color: var(--bhpc-muted);
+  }
+  .lo-list {
+    font-size: 13px;
+    color: var(--bhpc-muted);
+    line-height: 1.8;
+    padding-left: 1.25rem;
+  }
+  .lo-list li { margin-bottom: 4px; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--bhpc-ink);
+    color: rgba(250,247,242,0.5);
+    padding: 3rem 8vw;
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--bhpc-cream);
+    margin-bottom: 4px;
+  }
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(250,247,242,0.4);
+  }
+  .footer-note {
+    font-size: 11px;
+    max-width: 300px;
+    line-height: 1.7;
+    color: rgba(250,247,242,0.35);
+  }
+
+  /* UTILITIES */
+  .color-amber { color: var(--bhpc-amber); }
+  .color-coral { color: var(--bhpc-coral); }
+  .color-teal { color: var(--bhpc-teal); }
+  .color-purple { color: var(--bhpc-purple); }
+  .color-pink { color: var(--bhpc-pink); }
+
+  .bg-coral { background: var(--bhpc-coral); }
+  .bg-purple { background: var(--bhpc-purple); }
+  .bg-teal { background: var(--bhpc-teal); }
+  .bg-amber { background: var(--bhpc-amber); }
+  .bg-pink { background: var(--bhpc-pink); }
+
+  .quote-block {
+    border-left: 3px solid var(--bhpc-amber);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(201,123,46,0.06);
+    border-radius: 0 8px 8px 0;
+  }
+  .quote-block p {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--bhpc-ink);
+  }
+
+  @media (max-width: 600px) {
+    .cover { padding: 4rem 5vw; }
+    .section { padding: 3.5rem 5vw; }
+    .toc { padding: 2rem 5vw; }
+    .footer { padding: 2.5rem 5vw; }
+    .workshop-item { grid-template-columns: 1fr; gap: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <p class="cover-eyebrow">BHP Collective — C.R.E.A.T.E. Moments</p>
+  <h1>CEU Training Division<br><em>Strategic Plan</em></h1>
+  <p class="cover-sub">A full-spectrum roadmap for the most distinctive behavioral health continuing education program in the DC-Maryland region — built by and for the clinicians who have always deserved better.</p>
+  <div class="cover-meta">
+    <span><strong>Jurisdiction:</strong> Maryland &amp; Washington DC</span>
+    <span><strong>Facilitators:</strong> Two Black cisgender women, PhD-level</span>
+    <span><strong>Specializations:</strong> IO Psychology · Clinical Psychology · Neuroscience · Sports Psychology · Ethics</span>
+    <span><strong>Plan Horizon:</strong> 30 days through 18 months</span>
+  </div>
+  <div class="scroll-hint">Scroll to explore</div>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <p class="toc-label">Contents</p>
+  <div class="toc-links">
+    <a href="#identity">Who We Are</a>
+    <a href="#audiences">Audiences We Center</a>
+    <a href="#workshops">All Workshops</a>
+    <a href="#ethics">Ethics Deep Dive</a>
+    <a href="#standout">What Sets Us Apart</a>
+    <a href="#roadmap">30-to-18 Roadmap</a>
+    <a href="#outlines">Full Workshop Outlines</a>
+  </div>
+</div>
+
+<!-- IDENTITY -->
+<section class="section" id="identity">
+  <p class="section-eyebrow">Who We Are</p>
+  <h2 class="section-title">Not a training company. A field intervention.</h2>
+  <p class="section-lead">BHP Collective brings two doctoral-level Black women to every room — one trained in the science of how organizations behave, one in how humans break and heal. That combination does not exist anywhere else in this region.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-icon" style="background: var(--bhpc-amber-light);">🧠</div>
+      <h3 class="pillar-title">Neuroscience-Grounded</h3>
+      <p class="pillar-body">Every training is anchored in how the brain actually works — threat response, neural plasticity, allostatic load. Not metaphor. Not analogy. Actual science in plain language.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon" style="background: var(--bhpc-coral-light);">⚖️</div>
+      <h3 class="pillar-title">Ethics as Liberation</h3>
+      <p class="pillar-body">We don't teach ethics as compliance. We teach it as a framework for choosing who you are as a clinician — and who you protect when systems pressure you not to.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon" style="background: var(--bhpc-teal-light);">🏟️</div>
+      <h3 class="pillar-title">Sports Psychology Lens</h3>
+      <p class="pillar-body">Peak performance, resilience, flow state, mental coaching — applied to clinical practice and supervision. Clinicians are high-performance practitioners. We train them like it.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon" style="background: var(--bhpc-purple-light);">🏢</div>
+      <h3 class="pillar-title">IO + Clinical Dual Lens</h3>
+      <p class="pillar-body">Organizations and individuals operate on the same psychological principles. Our IO expertise means we can name what's happening at the system level, not just the personal level.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon" style="background: var(--bhpc-pink-light);">🌍</div>
+      <h3 class="pillar-title">Liberation-Centered</h3>
+      <p class="pillar-body">Every workshop is built on the premise that healing and equity are inseparable — and that clinicians cannot offer liberation they haven't begun to practice themselves.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon" style="background: var(--bhpc-amber-light);">🗣️</div>
+      <h3 class="pillar-title">Language-Inclusive</h3>
+      <p class="pillar-body">We explicitly address the ethics and practice of supervising multilingual clinicians — a gap nearly every training program ignores.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCES WE CENTER -->
+<section class="section" id="audiences">
+  <p class="section-eyebrow">Audiences We Center</p>
+  <h2 class="section-title">Built for clinicians the field has historically treated as an afterthought</h2>
+  <p class="section-lead">We lead with the communities most present in this work and least served by existing CE offerings. This is not a niche — this is the majority of the behavioral health workforce.</p>
+
+  <div class="audience-row">
+    <div class="audience-card ac-black-women">
+      <span class="ac-badge">Primary Audience Track 1</span>
+      <h3 class="ac-title">Black Cisgender Women Clinicians, 50+</h3>
+      <p class="ac-body">The unacknowledged senior workforce. Twenty-plus years of holding institutions together, often without title, recognition, or succession planning. These clinicians deserve training that sees their full complexity: career transitions, mentoring without burning out, legacy-building, and the specific neuroscience of chronic workplace stress in racialized environments. We build a track specifically for them — not a sidebar, a centerpiece.</p>
+    </div>
+    <div class="audience-card ac-queer">
+      <span class="ac-badge">Primary Audience Track 2</span>
+      <h3 class="ac-title">Black Queer Cisgender Women Clinicians, 35+</h3>
+      <p class="ac-body">Navigating intersecting identities in clinical spaces, supervisory relationships, and organizational culture simultaneously. These clinicians often hold the most complex identities in any room — and the fewest CE trainings that speak to their actual experience. Our training explicitly names how queer identity, Blackness, and professional authority interact in clinical work, supervision, and institutional belonging.</p>
+    </div>
+    <div class="audience-card ac-bipoc">
+      <span class="ac-badge">Community Ethics Focus</span>
+      <h3 class="ac-title">BIPOC Clinicians &amp; Community Ethics</h3>
+      <p class="ac-body">Community ethics names what standard APA ethics codes don't: the clinician who lives in the same neighborhood as their clients, the supervisor whose supervisee is also a colleague at their house of worship, the cultural broker who is expected to translate trauma and navigate dual roles simultaneously. We dedicate a full ethics CE module to what community embeddedness actually means — and how to practice with integrity inside it.</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <p>"The field asked BIPOC clinicians to heal the wounds of structural racism while offering them no training for what that actually costs — and no ethics framework for what it actually requires."</p>
+  </div>
+</section>
+
+<!-- ALL WORKSHOPS -->
+<section class="section" id="workshops">
+  <p class="section-eyebrow">Full CEU Training Portfolio</p>
+  <h2 class="section-title">Eleven workshops. Nothing like anything else out there.</h2>
+  <p class="section-lead">Each training is designed to earn CE credit in Maryland and Washington DC across all major licensure categories: LCPC, LCSW-C, LPC, LICSW, and psychologist.</p>
+
+  <div class="workshop-list">
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-coral"></div>
+        <span class="w-ce">3 CE</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">The Water We Swim In: Structural Racism as a Clinical Reality</p>
+        <p class="w-hook">"You didn't create the water. But you're swimming in it — and so are your clients."</p>
+        <div class="w-pills">
+          <span class="w-pill">Structural Racism</span><span class="w-pill">DC &amp; MD approved</span><span class="w-pill">All license types</span>
+        </div>
+        <ul class="w-modules">
+          <li>Historical policy as clinical context: redlining, deinstitutionalization, diagnostic racism</li>
+          <li>Allostatic load and epigenetics — structural outcomes, not individual pathology</li>
+          <li>IO + clinical dual lens: how organizations replicate societal structures</li>
+          <li>Live positionality mapping exercise</li>
+          <li>Structural action planning: what you can actually do, in session and beyond</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-purple"></div>
+        <span class="w-ce">3 CE</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Wired and Hired: Implicit Bias From Neuroscience to the Therapy Room</p>
+        <p class="w-hook">"Your brain categorizes 11 million bits of information per second. Your conscious mind handles 40. What's doing the rest of the work?"</p>
+        <div class="w-pills">
+          <span class="w-pill">Implicit Bias</span><span class="w-pill">Neuroscience</span><span class="w-pill">DC &amp; MD approved</span>
+        </div>
+        <ul class="w-modules">
+          <li>Cognitive architecture: heuristics, affect heuristic, in-group favoritism</li>
+          <li>Bias in diagnosis, treatment planning, and discharge decisions</li>
+          <li>IO angle: hiring, supervision, and performance review bias</li>
+          <li>Evidence-based debiasing protocols — beyond awareness</li>
+          <li>Live bias audit applied to participants' own caseloads</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-teal"></div>
+        <span class="w-ce">12 CE · 2 Days</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Supervisors Who Build Worlds: Liberation-Centered Clinical Supervision Intensive</p>
+        <p class="w-hook">"Every supervisor inherits a tradition. This training asks which one you're choosing to pass on."</p>
+        <div class="w-pills">
+          <span class="w-pill">Supervision</span><span class="w-pill">MD BAS Eligible</span><span class="w-pill">DC Supervisor Endorsement</span><span class="w-pill">2 Days</span>
+        </div>
+        <ul class="w-modules">
+          <li>Day 1: Supervision models, developmental frameworks, identity-conscious evaluation</li>
+          <li>Day 1: Power, gatekeeping, and ethics of the supervisory relationship</li>
+          <li>Day 2: Trauma-informed supervision, parallel process, vicarious trauma</li>
+          <li>Day 2: Corrective feedback with cultural humility — performance vs. fit vs. identity</li>
+          <li>Supervision agreement drafting lab + live simulation with debrief</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-coral"></div>
+        <span class="w-ce">3 CE · Ethics</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Diagnosing While Black: Race, the DSM, and the Ethics of Clinical Judgment</p>
+        <p class="w-hook">Counts toward ethics hours in MD and DC. Qualifies as diversity CE for most licensing boards.</p>
+        <div class="w-pills">
+          <span class="w-pill">Ethics CE</span><span class="w-pill">Race &amp; Diagnosis</span><span class="w-pill">MD &amp; DC</span>
+        </div>
+        <ul class="w-modules">
+          <li>History of racialized diagnosis from drapetomania to ADHD overdiagnosis</li>
+          <li>DSM-5-TR cultural formulation: what it says vs. how it's actually used</li>
+          <li>Ethical obligations when clinical tools carry structural bias</li>
+          <li>Documentation ethics and legal exposure around race-linked diagnoses</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-purple"></div>
+        <span class="w-ce">3 CE · Ethics</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">The Ethics of Not Knowing: Cultural Humility as an Ethical Obligation</p>
+        <p class="w-hook">Real licensing board complaints. Real ethics code analysis. Not a soft-skills training.</p>
+        <div class="w-pills">
+          <span class="w-pill">Ethics CE</span><span class="w-pill">Cultural Humility</span><span class="w-pill">MD &amp; DC</span>
+        </div>
+        <ul class="w-modules">
+          <li>Why cultural competence is insufficient and culturally humility is mandatory</li>
+          <li>APA, NASW, and AMHCA ethics codes read through an equity lens</li>
+          <li>Board complaint case analysis — what went wrong and why</li>
+          <li>Consent, scope of practice, and referral ethics across cultural difference</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-amber"></div>
+        <span class="w-ce">3 CE · Ethics</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Rooted and Responsible: Community Ethics for BIPOC Clinicians</p>
+        <p class="w-hook">"The ethics codes were not written for the clinician who sees their client at the grocery store, the church, and the corner."</p>
+        <div class="w-pills">
+          <span class="w-pill">Ethics CE</span><span class="w-pill">BIPOC Clinicians</span><span class="w-pill">Community Practice</span>
+        </div>
+        <ul class="w-modules">
+          <li>Community embeddedness and the myth of therapeutic neutrality</li>
+          <li>Dual relationship ethics in cultural and geographic proximity</li>
+          <li>Navigating gift-giving, advocacy, and cultural brokerage roles</li>
+          <li>Self-disclosure ethics for clinicians with shared lived experience</li>
+          <li>Collectivist ethics and individualist ethics codes — the tension is real</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-teal"></div>
+        <span class="w-ce">3 CE · Ethics</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Lost in Supervision: The Ethics of Supervising Multilingual and Multilingual-Emerging Clinicians</p>
+        <p class="w-hook">Nearly every supervisory training ignores this. Ours doesn't.</p>
+        <div class="w-pills">
+          <span class="w-pill">Ethics CE</span><span class="w-pill">Supervision</span><span class="w-pill">Multilingual Practice</span>
+        </div>
+        <ul class="w-modules">
+          <li>Competency evaluation when clinical work occurs in a language the supervisor doesn't speak</li>
+          <li>Informed consent and documentation ethics for multilingual practice</li>
+          <li>Power dynamics in supervision when English is a supervisee's second language</li>
+          <li>Interpreter use in clinical settings: ethics, training, and liability</li>
+          <li>Board compliance and scope of practice for multilingual clinicians</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-amber"></div>
+        <span class="w-ce">3 CE</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">The Athlete's Mind in the Clinician's Body: Peak Performance Psychology for Behavioral Health Practitioners</p>
+        <p class="w-hook">Clinicians are high-performance practitioners. They just aren't trained like ones.</p>
+        <div class="w-pills">
+          <span class="w-pill">Sports Psychology</span><span class="w-pill">Clinician Wellness</span><span class="w-pill">Performance</span>
+        </div>
+        <ul class="w-modules">
+          <li>Flow state, mental toughness, and recovery cycles applied to clinical work</li>
+          <li>Nervous system regulation from a performance neuroscience lens</li>
+          <li>Pre-session mental preparation rituals (sport-derived, evidence-based)</li>
+          <li>Managing high-stakes sessions the way athletes manage high-stakes competition</li>
+          <li>How supervisors can coach for peak clinical performance, not just compliance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-coral"></div>
+        <span class="w-ce">3 CE</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">When the Clinician Is the Crisis: Burnout, Moral Injury, and the Neuroscience of Compassion Fatigue</p>
+        <p class="w-hook">The data says Black and Brown clinicians are burning out faster. This training names why — and builds something real.</p>
+        <div class="w-pills">
+          <span class="w-pill">Wellness</span><span class="w-pill">Neuroscience</span><span class="w-pill">BIPOC Clinicians</span>
+        </div>
+        <ul class="w-modules">
+          <li>Moral injury vs. burnout vs. secondary trauma: a neuroscience distinction</li>
+          <li>Racial battle fatigue in the clinical workplace — a specific and real phenomenon</li>
+          <li>IO perspective: how organizational structures manufacture burnout</li>
+          <li>Evidence-based recovery interventions beyond "self-care"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-purple"></div>
+        <span class="w-ce">3 CE · Ethics</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Informed Consent in the Age of Algorithmic Care: AI, Telehealth, and Digital Ethics</p>
+        <p class="w-hook">What every clinician is legally and ethically obligated to disclose — and what they don't know they're missing.</p>
+        <div class="w-pills">
+          <span class="w-pill">Ethics CE</span><span class="w-pill">Technology</span><span class="w-pill">Telehealth</span>
+        </div>
+        <ul class="w-modules">
+          <li>AI in mental health: what platforms clinicians use actually do with data</li>
+          <li>Informed consent language for digital and hybrid practice</li>
+          <li>Electronic health record access, ownership, and client rights</li>
+          <li>Bias in algorithmic clinical tools — what the research says</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workshop-item">
+      <div class="w-tag">
+        <div class="w-tag-color bg-pink"></div>
+        <span class="w-ce">3 CE</span>
+      </div>
+      <div class="w-body">
+        <p class="w-title">Black, Queer, and in the Room: Affirming Clinical Practice for Multiply-Marginalized Clients and Clinicians</p>
+        <p class="w-hook">Most affirming care trainings treat queer identity and racial identity as separate. This one treats them as they actually are.</p>
+        <div class="w-pills">
+          <span class="w-pill">Queer Affirming</span><span class="w-pill">Intersectionality</span><span class="w-pill">BIPOC Clinicians</span>
+        </div>
+        <ul class="w-modules">
+          <li>Intersectionality as a clinical framework, not just a political concept</li>
+          <li>Specific risks and needs of Black queer clients across clinical settings</li>
+          <li>Identity safety in the supervisory relationship for queer clinicians of color</li>
+          <li>Navigating religious, cultural, and queer identity in the same treatment space</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ETHICS DEEP DIVE -->
+<section class="section" id="ethics">
+  <p class="section-eyebrow">Ethics as a Cornerstone</p>
+  <h2 class="section-title">Five ethics CE workshops. None of them what you expect.</h2>
+  <p class="section-lead">Maryland requires 3 ethics CE hours per renewal cycle. DC requires 3 per cycle as well. Most clinicians resent filling this requirement. We intend to change that.</p>
+
+  <div class="ethics-grid">
+    <div class="ethics-cell">
+      <span class="ec-label">Ethics CE · MD &amp; DC</span>
+      <h3 class="ec-title">Diagnosing While Black</h3>
+      <p class="ec-body">The history of racialized diagnosis is not ancient history — it is active in every DSM category used today. This training builds the ethical vocabulary to name what's happening and act with integrity.</p>
+    </div>
+    <div class="ethics-cell">
+      <span class="ec-label">Ethics CE · MD &amp; DC</span>
+      <h3 class="ec-title">The Ethics of Not Knowing</h3>
+      <p class="ec-body">Uses real licensing board complaints to teach cultural humility not as aspiration but as mandatory professional practice with legal and ethical stakes.</p>
+    </div>
+    <div class="ethics-cell">
+      <span class="ec-label">Ethics CE · MD &amp; DC</span>
+      <h3 class="ec-title">Rooted and Responsible</h3>
+      <p class="ec-body">Community ethics for BIPOC clinicians working in the same communities where they live, worship, and belong. The only training of its kind in this region.</p>
+    </div>
+    <div class="ethics-cell">
+      <span class="ec-label">Ethics CE · Supervision</span>
+      <h3 class="ec-title">Lost in Supervision</h3>
+      <p class="ec-body">The ethics of supervising multilingual clinicians — competency, consent, power, and liability. A gap in the field that BHP Collective is uniquely positioned to fill.</p>
+    </div>
+    <div class="ethics-cell">
+      <span class="ec-label">Ethics CE · Technology</span>
+      <h3 class="ec-title">Algorithmic Care Ethics</h3>
+      <p class="ec-body">AI, EHRs, telehealth platforms, and digital surveillance — the informed consent and ethical disclosure obligations most clinicians are not meeting right now.</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <p>"We don't teach ethics as rules to follow. We teach ethics as the practice of deciding who you are when the rules don't cover the situation — which is most of the time."</p>
+  </div>
+</section>
+
+<!-- WHAT SETS US APART -->
+<section class="section" id="standout">
+  <p class="section-eyebrow">Competitive Differentiation</p>
+  <h2 class="section-title">What makes BHP Collective training irreplaceable</h2>
+  <p class="section-lead">There are hundreds of CE training providers in DC and Maryland. Here is the precise and honest case for why ours belong in a category of their own.</p>
+
+  <div class="standout-grid">
+    <div class="standout-card">
+      <span class="sc-label">Facilitator credential</span>
+      <h3 class="sc-title">The only IO + Clinical PhD pair in the region</h3>
+      <p class="sc-body">A PhD in Industrial-Organizational Psychology and a PhD in Clinical Psychology in the same room is genuinely rare. The IO lens transforms individual clinical training into organizational analysis — and opens conversations no clinical-only trainer can have.</p>
+    </div>
+    <div class="standout-card light">
+      <span class="sc-label">Neuroscience integration</span>
+      <h3 class="sc-title">Real brain science, not metaphor</h3>
+      <p class="sc-body">Our neuroscience-trained clinician brings peer-reviewed science into every applicable training. Implicit bias, allostatic load, burnout, and performance psychology are all grounded in actual neuroscience literature — which makes the content stick and satisfy continuing education standards simultaneously.</p>
+    </div>
+    <div class="standout-card">
+      <span class="sc-label">Sports psychology application</span>
+      <h3 class="sc-title">Clinicians as high-performance practitioners</h3>
+      <p class="sc-body">No other behavioral health CE program in this region uses sports psychology frameworks to teach clinical performance, supervision coaching, and burnout recovery. This is a genuine intellectual differentiator that attracts a new audience and creates a memorable brand position.</p>
+    </div>
+    <div class="standout-card light">
+      <span class="sc-label">Population specificity</span>
+      <h3 class="sc-title">Trainings designed for the workforce doing the work</h3>
+      <p class="sc-body">Black women clinicians over 50. Black queer clinicians navigating intersecting identities. BIPOC clinicians in community-embedded practice. Multilingual clinicians navigating supervision ethics. We build for these populations specifically — not as a diversity add-on, but as the primary frame.</p>
+    </div>
+    <div class="standout-card">
+      <span class="sc-label">Community ethics gap</span>
+      <h3 class="sc-title">The only community ethics CE in the region</h3>
+      <p class="sc-body">No existing ethics CE training addresses the realities of BIPOC clinicians who practice inside the communities where they live. This is a documented gap, a real ethical risk, and an enormous unmet need in both MD and DC markets.</p>
+    </div>
+    <div class="standout-card light">
+      <span class="sc-label">Multilingual supervision</span>
+      <h3 class="sc-title">A field-wide blind spot. Our specialty.</h3>
+      <p class="sc-body">Maryland and DC have among the most linguistically diverse behavioral health workforces in the country. The ethics and practice of supervising multilingual clinicians are nearly entirely unaddressed in existing CE literature. BHP Collective owns this space.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <p class="section-eyebrow">Strategic Roadmap</p>
+  <h2 class="section-title">30 days to 18 months: building a training program that lasts</h2>
+  <p class="section-lead">Six phases. Each builds on the last. Every action item is specific, delegable, and tied to a clear outcome.</p>
+
+  <div class="timeline">
+
+    <div class="tl-phase">
+      <p class="tl-label color-amber">Phase 1 — Days 1 to 30</p>
+      <h3 class="tl-title">Foundation and Launch Readiness</h3>
+      <p class="tl-theme">Theme: Build the infrastructure before you build the audience.</p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-category color-amber">CE Approval</p>
+          <ul class="action-items">
+            <li>Submit CE provider applications to Maryland Board of Professional Counselors and DC Board of Professional Counseling</li>
+            <li>Identify NBCC-approved CE provider path for national reach</li>
+            <li>Confirm ethics CE credit eligibility for the five ethics workshops with both boards</li>
+            <li>Document BAS eligibility for the 2-day supervision intensive under COMAR</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-amber">Content Development</p>
+          <ul class="action-items">
+            <li>Finalize learning objectives for all 11 workshops (3 per objective minimum)</li>
+            <li>Complete full facilitator guide for Workshop 1: The Water We Swim In</li>
+            <li>Complete full facilitator guide for Workshop 2: Wired and Hired</li>
+            <li>Draft 2-day supervision intensive full agenda with activity timing</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-amber">Business Operations</p>
+          <ul class="action-items">
+            <li>Establish pricing tiers: individual registration, group rate, organizational contract</li>
+            <li>Set up registration and payment infrastructure (e.g., Stripe + Eventbrite or Acuity)</li>
+            <li>Build CEU certificate issuance template and delivery workflow</li>
+            <li>Draft standard training agreement for organizational clients</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-amber">Brand and Marketing</p>
+          <ul class="action-items">
+            <li>Finalize BHP Collective CEU training sub-brand under C.R.E.A.T.E. Moments</li>
+            <li>Launch training page on bhpcollective.com with all 11 workshop descriptions</li>
+            <li>Create one-page shareable PDF overview of the full training portfolio</li>
+            <li>Build waitlist capture for the 2-day supervision intensive before tickets open</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-phase">
+      <p class="tl-label color-coral">Phase 2 — Days 31 to 60</p>
+      <h3 class="tl-title">First Cohort and Market Signal</h3>
+      <p class="tl-theme">Theme: Run the first training. Learn everything. Build the reputation one participant at a time.</p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-category color-coral">Programming</p>
+          <ul class="action-items">
+            <li>Deliver Workshop 1: The Water We Swim In (pilot cohort, max 20 participants)</li>
+            <li>Collect structured evaluation data: content quality, facilitator effectiveness, CE relevance</li>
+            <li>Document all participant feedback for CE board renewal documentation</li>
+            <li>Record session (with consent) for hybrid and on-demand development</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-coral">Outreach and Partnerships</p>
+          <ul class="action-items">
+            <li>Send formal intro to Maryland Counseling Association and DC LPC Alliance</li>
+            <li>Contact 5 HBCU graduate counseling and social work programs about co-sponsorship</li>
+            <li>Reach out to NASW-MD and NASW-DC chapters about partnership listing</li>
+            <li>Identify 3 community mental health agencies for organizational training contracts</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-coral">Content Pipeline</p>
+          <ul class="action-items">
+            <li>Complete facilitator guides for Workshops 3 and 4 (Diagnosing While Black, Ethics of Not Knowing)</li>
+            <li>Draft community ethics workshop (Rooted and Responsible) in full</li>
+            <li>Begin neuroscience content library: slides, handouts, and bibliography for all neuro-integrated workshops</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-coral">Thought Leadership</p>
+          <ul class="action-items">
+            <li>Publish first thought leadership piece: "Why BIPOC clinicians need community ethics training, not just cultural competence hours"</li>
+            <li>Launch LinkedIn presence for BHP Collective training brand</li>
+            <li>Submit abstract to one regional conference (e.g., MCA Annual Conference)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-phase">
+      <p class="tl-label color-teal">Phase 3 — Days 61 to 90</p>
+      <h3 class="tl-title">Portfolio Activation</h3>
+      <p class="tl-theme">Theme: Move from one workshop to a recognizable training brand with multiple offerings in market.</p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-category color-teal">Programming</p>
+          <ul class="action-items">
+            <li>Launch Workshop 2: Wired and Hired (neuroscience implicit bias)</li>
+            <li>Open registration for the 2-day supervision intensive (first cohort, limited to 24)</li>
+            <li>Deliver Workshop 4: The Ethics of Not Knowing (first ethics CE offering)</li>
+            <li>Pilot the workshop bundle: 3 workshops + certificate of completion in equity-informed practice</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-teal">Audience Development</p>
+          <ul class="action-items">
+            <li>Launch Black Women Clinicians 50+ track with curated workshop sequence and cohort community</li>
+            <li>Begin outreach to Black queer clinician networks for Track 2 program design input</li>
+            <li>Develop multilingual clinician outreach through immigrant-serving behavioral health agencies</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-teal">Revenue</p>
+          <ul class="action-items">
+            <li>Close first organizational training contract (target: $3,000–$6,000 for a 3-workshop series)</li>
+            <li>Launch group registration discount for practices sending 3 or more clinicians</li>
+            <li>Price the 2-day supervision intensive at $350–$450 per participant (target: $8,400–$10,800 per cohort)</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-teal">Content Pipeline</p>
+          <ul class="action-items">
+            <li>Complete sports psychology workshop: The Athlete's Mind in the Clinician's Body</li>
+            <li>Complete burnout workshop: When the Clinician Is the Crisis</li>
+            <li>Begin multilingual supervision ethics workshop (Lost in Supervision)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-phase">
+      <p class="tl-label color-purple">Phase 4 — 6 Months</p>
+      <h3 class="tl-title">Credibility and Repeatability</h3>
+      <p class="tl-theme">Theme: BHP Collective is now a known training entity in MD and DC. Build systems that make the business sustainable without adding to personal workload.</p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-category color-purple">Scale</p>
+          <ul class="action-items">
+            <li>Launch quarterly open-enrollment schedule with all 11 workshops rotating across the year</li>
+            <li>Develop on-demand digital versions of 3 high-demand workshops (implicit bias, structural racism, community ethics)</li>
+            <li>Establish annual contract pricing for organizations seeking recurring CE programming ($8,000–$15,000/year)</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-purple">Certification</p>
+          <ul class="action-items">
+            <li>Design and launch the Certificate in Equity-Informed Behavioral Health Practice (18 CE hours across 6 workshops)</li>
+            <li>Design and launch the Certificate in Liberation-Centered Supervision (the 2-day intensive + 2 additional workshops)</li>
+            <li>Explore badging through Credly or similar digital credentialing platform</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-purple">Partnerships</p>
+          <ul class="action-items">
+            <li>Formalize CE co-sponsorship with at least one HBCU graduate program</li>
+            <li>Submit to Maryland OMHC provider training list as approved CE source</li>
+            <li>Pursue inclusion in Maryland BHA Medicaid workforce development training list</li>
+            <li>Apply to present full session at AMHCA National Conference</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-purple">Community Building</p>
+          <ul class="action-items">
+            <li>Launch Black Women Clinicians 50+ private community (Circle, Mighty Networks, or Slack)</li>
+            <li>Host first free community event: panel on legacy, mentorship, and late-career identity</li>
+            <li>Begin quarterly newsletter for BHP Collective training alumni</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-phase">
+      <p class="tl-label color-pink">Phase 5 — 12 Months</p>
+      <h3 class="tl-title">Regional Authority</h3>
+      <p class="tl-theme">Theme: BHP Collective is the first name that comes to mind when a behavioral health organization in DC or Maryland needs equity-centered clinical training.</p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-category color-pink">Market Position</p>
+          <ul class="action-items">
+            <li>Achieve 200+ unique CE participants served across MD and DC</li>
+            <li>Secure 5 active organizational training contracts</li>
+            <li>Achieve NBCC-Approved CE Provider status for national reach</li>
+            <li>Launch a formal annual report / impact document for organizational partners and funders</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-pink">Training Expansion</p>
+          <ul class="action-items">
+            <li>Launch cohort-based supervision training: a 6-month group supervision experience for Black women supervisors (hybrid, 30 CE hours)</li>
+            <li>Develop and launch Track 2 programming specifically for Black queer clinicians</li>
+            <li>Launch the first sports psychology + clinical performance retreat (1-day intensive, CE eligible)</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-pink">Revenue Targets</p>
+          <ul class="action-items">
+            <li>Target: $80,000–$120,000 gross training revenue at 12 months</li>
+            <li>Revenue mix: 40% open enrollment, 40% organizational contracts, 20% on-demand digital</li>
+            <li>Explore grant funding through SAMHSA workforce development and HRSA behavioral health</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-pink">Influence</p>
+          <ul class="action-items">
+            <li>Present original research or data from BHP Collective participant outcomes at a national conference</li>
+            <li>Pursue publication: a practice brief or journal article on community ethics for BIPOC clinicians</li>
+            <li>Launch a speaker bureau positioning both facilitators for keynote and consulting engagements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-phase">
+      <p class="tl-label color-teal">Phase 6 — 18 Months</p>
+      <h3 class="tl-title">National Footprint</h3>
+      <p class="tl-theme">Theme: What started in Maryland and DC is now replicable, scalable, and nationally recognized.</p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-category color-teal">National Expansion</p>
+          <ul class="action-items">
+            <li>Expand CE approval to 5 additional states with large BIPOC behavioral health workforces (Virginia, Georgia, New York, Texas, California)</li>
+            <li>Launch national virtual open-enrollment series with time zone-friendly scheduling</li>
+            <li>Develop facilitator training program to certify 5 external BHP Collective-trained facilitators</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-teal">Product Development</p>
+          <ul class="action-items">
+            <li>Launch BHP Collective Learning Portal: a branded LMS with all on-demand CE content</li>
+            <li>Develop a 12-month Certificate Program in Black Women's Clinical Leadership (60+ CE hours)</li>
+            <li>Publish the BHP Collective Community Ethics Framework as a stand-alone practitioner resource</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-teal">Institutional Reach</p>
+          <ul class="action-items">
+            <li>Pursue federal contract or subcontract for workforce training (SAMHSA, HRSA, VA)</li>
+            <li>Engage 3 universities about incorporating BHP Collective frameworks into graduate clinical training</li>
+            <li>Position the community ethics curriculum for adoption by at least one state licensing board as an approved ethics CE course</li>
+          </ul>
+        </div>
+        <div class="action-card">
+          <p class="action-category color-teal">Revenue Targets</p>
+          <ul class="action-items">
+            <li>Target: $200,000–$300,000 gross training revenue at 18 months</li>
+            <li>Revenue mix shift: 25% open enrollment, 35% organizational, 25% digital, 15% government/federal</li>
+            <li>Evaluate acquisition or licensing interest in curriculum from large CE platforms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FULL OUTLINES (3 CORE) -->
+<section class="section" id="outlines">
+  <p class="section-eyebrow">Full Workshop Outlines</p>
+  <h2 class="section-title">The three core workshops, fully built out</h2>
+  <p class="section-lead">Learning objectives, module breakdowns, and key focus areas for the three primary trainings — ready for CE board submission and facilitator preparation.</p>
+
+  <!-- Workshop 1 -->
+  <div class="outline-block">
+    <div class="outline-header coral">
+      <span class="oh-tag color-coral">Workshop 1 &bull; 3 CE Hours &bull; Structural Racism</span>
+      <h3 class="oh-title">The Water We Swim In: Structural Racism as a Clinical Reality</h3>
+      <p class="oh-meta">3 instructional hours &bull; All licensure types &bull; MD and DC approved &bull; Qualifies for diversity CE hours</p>
+    </div>
+    <div class="outline-body">
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem;">Learning Objectives — Participants will be able to:</p>
+      <ol class="lo-list">
+        <li>Identify at least three specific historical policies that produced measurable disparities in behavioral health outcomes for Black and Brown communities</li>
+        <li>Explain the relationship between allostatic load and structural racism using current neuroscience evidence</li>
+        <li>Apply positionality mapping to their own clinical practice to identify blind spots and structural assumptions</li>
+        <li>Develop one structural action item specific to their clinical or supervisory role</li>
+      </ol>
+      <br>
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem;">Module Breakdown</p>
+      <div class="outline-modules">
+        <div class="om-block">
+          <span class="om-label">Module 1 (45 min)</span>
+          <ul class="om-items">
+            <li>The architecture of structural racism</li>
+            <li>Redlining, its ongoing effects on access to care</li>
+            <li>Deinstitutionalization and criminalization</li>
+            <li>Racialized diagnostic history</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Module 2 (45 min)</span>
+          <ul class="om-items">
+            <li>Allostatic load: the body under structural stress</li>
+            <li>Epigenetics and intergenerational trauma</li>
+            <li>Why "resilience" language can mask structural harm</li>
+            <li>Clinical implications for assessment and treatment</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Module 3 (45 min)</span>
+          <ul class="om-items">
+            <li>IO lens: how organizations replicate structural racism</li>
+            <li>Behavioral health organizations as systems</li>
+            <li>Clinician positionality and power</li>
+            <li>Live positionality mapping exercise</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Module 4 (45 min)</span>
+          <ul class="om-items">
+            <li>From awareness to action: what clinicians can actually do</li>
+            <li>Advocacy, documentation, and referral as structural interventions</li>
+            <li>Structural action planning tool</li>
+            <li>Q&amp;A and integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 2 -->
+  <div class="outline-block">
+    <div class="outline-header purple">
+      <span class="oh-tag color-purple">Workshop 2 &bull; 3 CE Hours &bull; Implicit Bias + Neuroscience</span>
+      <h3 class="oh-title">Wired and Hired: Implicit Bias From Neuroscience to the Therapy Room</h3>
+      <p class="oh-meta">3 instructional hours &bull; All licensure types &bull; MD and DC approved &bull; Qualifies for diversity CE hours</p>
+    </div>
+    <div class="outline-body">
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem;">Learning Objectives — Participants will be able to:</p>
+      <ol class="lo-list">
+        <li>Describe the neurological basis of implicit bias including dual process theory and the role of the amygdala and prefrontal cortex</li>
+        <li>Identify at least three ways implicit bias manifests in clinical decision-making across the treatment continuum</li>
+        <li>Apply at least two evidence-based debiasing strategies to their clinical or supervisory practice</li>
+        <li>Conduct a structured bias audit on at least one case from their own caseload using the provided framework</li>
+      </ol>
+      <br>
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem;">Module Breakdown</p>
+      <div class="outline-modules">
+        <div class="om-block">
+          <span class="om-label">Module 1 (45 min)</span>
+          <ul class="om-items">
+            <li>How the brain categorizes: dual process theory</li>
+            <li>Amygdala, threat response, and social categorization</li>
+            <li>Affect heuristic and clinical pattern-matching</li>
+            <li>In-group favoritism and out-group othering</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Module 2 (45 min)</span>
+          <ul class="om-items">
+            <li>Bias in diagnosis: overdiagnosis and underdiagnosis by race</li>
+            <li>Bias in treatment planning: what research shows</li>
+            <li>Discharge and termination bias</li>
+            <li>IO lens: hiring and performance review bias</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Module 3 (45 min)</span>
+          <ul class="om-items">
+            <li>Why awareness alone doesn't work (and the research that proves it)</li>
+            <li>Evidence-based debiasing protocols</li>
+            <li>Structural interventions vs. individual interventions</li>
+            <li>Slowing down: implementation intentions</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Module 4 (45 min)</span>
+          <ul class="om-items">
+            <li>Live bias audit exercise</li>
+            <li>Structured case review framework</li>
+            <li>Integration and action planning</li>
+            <li>Q&amp;A and closing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 3 -->
+  <div class="outline-block">
+    <div class="outline-header teal">
+      <span class="oh-tag color-teal">Workshop 3 &bull; 12 CE Hours &bull; 2-Day Supervision Intensive</span>
+      <h3 class="oh-title">Supervisors Who Build Worlds: Liberation-Centered Clinical Supervision Intensive</h3>
+      <p class="oh-meta">12 instructional hours across 2 days &bull; LCPC, LCSW-C, LPC, LICSW &bull; MD BAS eligible &bull; DC supervisor endorsement eligible</p>
+    </div>
+    <div class="outline-body">
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem;">Learning Objectives — Participants will be able to:</p>
+      <ol class="lo-list">
+        <li>Identify and apply at least two models of clinical supervision (MCST, developmental, feminist) to their current or anticipated supervisory practice</li>
+        <li>Analyze how power operates in the supervisory relationship and describe at least three strategies for ethical use of supervisory authority</li>
+        <li>Design a supervision agreement that incorporates identity-conscious evaluation criteria and explicit feedback protocols</li>
+        <li>Apply trauma-informed supervision principles to at least one case involving a supervisee with lived trauma experience</li>
+        <li>Provide corrective feedback using a culturally humble framework that distinguishes between performance, fit, and identity</li>
+        <li>Articulate the specific ethical obligations of supervisors under MD and DC licensing law</li>
+      </ol>
+      <br>
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem;">Day 1 — The Architecture of Supervision</p>
+      <div class="outline-modules">
+        <div class="om-block">
+          <span class="om-label">Morning (3 hrs)</span>
+          <ul class="om-items">
+            <li>Models of supervision: MCST, developmental, feminist, liberation-centered</li>
+            <li>Identity-conscious evaluation: separating performance from fit from identity</li>
+            <li>The supervisory relationship as a microcosm of systemic dynamics</li>
+            <li>Introduction to the supervision agreement drafting lab</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Afternoon (3 hrs)</span>
+          <ul class="om-items">
+            <li>Power, gatekeeping, and the ethics of supervision</li>
+            <li>MD and DC licensing law: what supervisors are legally responsible for</li>
+            <li>Informed consent in supervision</li>
+            <li>Supervision agreement drafting lab (live working session)</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bhpc-muted); margin-bottom:0.75rem; margin-top:1rem;">Day 2 — The Practice of Supervision</p>
+      <div class="outline-modules">
+        <div class="om-block">
+          <span class="om-label">Morning (3 hrs)</span>
+          <ul class="om-items">
+            <li>Trauma-informed supervision: recognizing and responding to supervisee trauma</li>
+            <li>Parallel process: how client dynamics live in the supervision room</li>
+            <li>Vicarious trauma in supervisors: neuroscience and self-protection</li>
+            <li>Sports psychology coaching model applied to supervision</li>
+          </ul>
+        </div>
+        <div class="om-block">
+          <span class="om-label">Afternoon (3 hrs)</span>
+          <ul class="om-items">
+            <li>Culturally humble corrective feedback</li>
+            <li>Live supervision simulation with structured debrief</li>
+            <li>Supervising multilingual clinicians: ethics and practice</li>
+            <li>Integration, Q&amp;A, and certificate of completion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <p class="footer-brand">BHP Collective</p>
+    <p class="footer-tagline">C.R.E.A.T.E. Moments — CEU Training Division</p>
+  </div>
+  <p class="footer-note">This document is a strategic planning resource for internal use and partnership development. All workshop titles, frameworks, and programming concepts are proprietary to BHP Collective. Maryland and DC jurisdiction. 2025–2026.</p>
+</footer>
+
+</body>
+</html>
